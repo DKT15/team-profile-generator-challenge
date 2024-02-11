@@ -49,12 +49,12 @@ const promptUser = () =>
       },
     ])
     // Here I am pushing the manager's data that the user has entered to the HTML file.
-    .then((templateData) => {
+    .then((htmlData) => {
       const newManager = new Manager(
-        templateData.name,
-        templateData.id,
-        templateData.email,
-        templateData.officeNumber
+        htmlData.name,
+        htmlData.id,
+        htmlData.email,
+        htmlData.officeNumber
       );
       this.manager.push(newManager);
     });
@@ -84,12 +84,12 @@ if (employeeOptions === "Add an Engineer") {
       },
     ])
     // Here I am pushing the Engineer's data that the user has entered to the HTML file.
-    .then((templateData) => {
+    .then((htmlData) => {
       const newEngineer = new Engineer(
-        templateData.name,
-        templateData.id,
-        templateData.email,
-        templateData.github
+        htmlData.name,
+        htmlData.id,
+        htmlData.email,
+        htmlData.github
       );
       this.engineer.push(newEngineer);
     });
@@ -118,12 +118,12 @@ if (employeeOptions === "Add an Engineer") {
       },
     ])
     // Here I am pushing the Intern's data that the user has entered to the HTML file.
-    .then((templateData) => {
+    .then((htmlData) => {
       const newIntern = new Intern(
-        templateData.name,
-        templateData.id,
-        templateData.email,
-        templateData.school
+        htmlData.name,
+        htmlData.id,
+        htmlData.email,
+        htmlData.school
       );
       this.intern.push(newIntern);
     });
