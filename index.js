@@ -17,96 +17,101 @@ const promptUser = () =>
   inquirer.prompt([
     {
       type: "input",
-      name: "nameOfRepo",
-      message: "What is the name of your Repo?",
+      name: "name",
+      message: "Please enter the manager's name",
+    },
+    {
+      type: "number",
+      name: "id",
+      message: "Please enter the manager's employee id",
     },
     {
       type: "input",
-      name: "description",
-      message: "Write a description for your project.",
+      name: "email",
+      message: "Please enter the manager's email",
     },
     {
-      type: "test",
-      name: "tableOfContents",
-      message: "Add your relevant links to navigate around the README",
-    },
-    {
-      type: "input",
-      name: "installation",
-      message:
-        "If applicable, describe the steps required to install your project.",
-    },
-    {
-      type: "input",
-      name: "usage",
-      message: "Provide instructions and examples of your project in use ",
+      type: "number",
+      name: "officeNumber",
+      message: "Please enter the manager's office number",
     },
     {
       type: "list",
-      name: "license",
-      message: "choose a license for your project",
+      name: "employeeOptions",
+      message: "Would you like to add another employee to the team?",
       choices: [
-        "GNU LGPLv3",
-        "Mozilla Public License 2.0",
-        "Apache License 2.0",
-        "MIT License",
-        "No license",
+        "Add an Engineer",
+        "Add an Intern",
+        "I have finished building my team.",
       ],
-    },
-    {
-      type: "input",
-      name: "contributing",
-      message:
-        "If applicable, provide guidelines on how other developers can contribute to your project.",
-    },
-    {
-      type: "input",
-      name: "tests",
-      message:
-        "If applicable, provide any tests written for your application and provide examples on how to run them.",
-    },
-    {
-      type: "input",
-      name: "questions",
-      message:
-        "please add your GitHub username and email address to be contacted if anyone has any questions.",
     },
   ]);
 
-//This function takes in the data from above and then returns it.
-const createHTMLFile = (data) => {
-  console.log(data);
-  const {
-    nameOfRepo,
-    description,
-    tableOfContents,
-    installation,
-    usage,
-    license,
-    contributing,
-    tests,
-    questions,
-  } = data; //object destructuring
-
-  return `## ${nameOfRepo} 
-## ${description}
-## ${tableOfContents}
-## ${installation}
-## ${usage}
-## ${license}
-## ${contributing}
-## ${tests}
-## ${questions}
-  `;
-};
+if (employeeOptions === "Add an Engineer") {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "Please enter the engineer's name",
+    },
+    {
+      type: "number",
+      name: "id",
+      message: "Please enter the engineer's employee id",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Please enter the engineer's email",
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "Please enter the engineer's github username",
+    },
+  ]);
+} else if (employeeOptions === "Add an Intern") {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "Please enter the intern's name",
+    },
+    {
+      type: "number",
+      name: "id",
+      message: "Please enter the intern's employee id",
+    },
+    {
+      ype: "input",
+      name: "email",
+      message: "Please enter the intern's email",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Please enter the intern's school name",
+    },
+  ]);
+} else if (employeeOptions === "I have finished building my team.") {
+  const employeeHTML = this.generateteam(team);
+  fs.writeFile(outputPath),
+    employeeHTML,
+    (err) => {
+      if (err) throw new Error(err);
+      console.log("Page created! Check out ./html/index.html");
+    };
+}
 
 // Prompt user function is called here. When it is called, it passes in the data and the generateREADME.md file is being created. The createMarkdownFile is being run with the data inside of it.
-promptUser()
-  .then((data) => writeFileAsync("generateindex.html", createHTMLFile(data)))
-  .then(
-    () =>
-      console.log(
-        "You have added your data successfully to the README.md file."
-      ) //If it passes then the success message will be displayed. If not then the error message will be.
-  )
-  .catch((err) => console.log(err));
+promptUser();
+render([Manager, Engineer, Intern]);
+
+//   .then((data) => writeFileAsync("generateindex.html", createHTMLFile(data)))
+//   .then(
+//     () =>
+//       console.log(
+//         "You have added your data successfully to the README.md file."
+//       ) //If it passes then the success message will be displayed. If not then the error message will be.
+//   )
+//   .catch((err) => console.log(err));
