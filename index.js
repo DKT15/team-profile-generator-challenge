@@ -59,7 +59,6 @@ const promptUser = () => {
         team.push(newManager);
       }
       createTeam(htmlData.employeeOptions);
-      // render(team);
     });
 };
 function createTeam(employeeOptions) {
@@ -134,7 +133,7 @@ function createTeam(employeeOptions) {
     // If the user selects that they have finished building their team after the manager has been created. This code will trigger and will write and generate the HTML file and will also catch any errors in the process.
   } else if (employeeOptions === "I have finished building my team.") {
     const employeeHTML = this.generateteam(team);
-    fs.writeFile(outputPath),
+    fs.writeFile(outputPath, render(team)),
       employeeHTML,
       (err) => {
         if (err) throw new Error(err);
@@ -142,8 +141,8 @@ function createTeam(employeeOptions) {
         console.log("Page created! Check out ./output/team.html");
       };
   }
-  render(team);
+  // render(team);
 }
 
-// Here I'm calling the promptUser method and rendering the Manager, Engineer and Intern.
+// Here I'm calling the promptUser method.
 promptUser();
