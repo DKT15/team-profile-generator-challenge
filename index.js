@@ -132,16 +132,13 @@ function createTeam(employeeOptions) {
       });
     // If the user selects that they have finished building their team after the manager has been created. This code will trigger and will write and generate the HTML file and will also catch any errors in the process.
   } else if (employeeOptions === "I have finished building my team.") {
-    const employeeHTML = this.generateteam(team);
+    const employeeHTML = promptUser(team);
     fs.writeFile(outputPath, render(team)),
       employeeHTML,
-      (err) => {
-        if (err) throw new Error(err);
-
-        console.log("Page created! Check out ./output/team.html");
-      };
+      console.log("Page created! Check out ./output/team.html");
+  } else {
+    console.log(err);
   }
-  // render(team);
 }
 
 // Here I'm calling the promptUser method.
