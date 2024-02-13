@@ -10,7 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 const team = [];
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
 
 // This is the prmopt user function that which is calling inquirer.prompt. Below it is various questions that will be in the file.
 const promptUser = () => {
@@ -95,6 +94,9 @@ function createTeam(employeeOptions) {
           htmlData.github
         );
         team.push(newEngineer);
+        fs.writeFile(outputPath, render(team), (err) => {
+          console.log(err);
+        });
       });
   } else if (employeeOptions === "Add an Intern") {
     inquirer
@@ -129,6 +131,9 @@ function createTeam(employeeOptions) {
           htmlData.school
         );
         team.push(newIntern);
+        fs.writeFile(outputPath, render(team), (err) => {
+          console.log(err);
+        });
       });
     // If the user selects that they have finished building their team after the manager has been created. This code will trigger and will write and generate the HTML file and will also catch any errors in the process.
   } else if (employeeOptions === "I have finished building my team.") {
