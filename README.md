@@ -9,7 +9,6 @@ This is an application will take in information about employees on a software en
 - [Technologies Used](#technology)
 - [Usage](#usage)
 - [Screenshot](#screenshot)
-- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [About Me](#aboutme)
 - [License](#license)
@@ -24,7 +23,7 @@ This is an application will take in information about employees on a software en
 
 ## Usage
 
-To generate your own README, `git clone` the repo down to your local so you have the Node project on your local.
+To generate your own HTML file, `git clone` the repo down to your local so you have the Node project on your local.
 
 Run `npm install` in order to install the following npm package dependencies as specified in the `package.json`:
 
@@ -38,11 +37,7 @@ After answering all the prompts, a HTML file and will be named 'team.html' and w
 
 ## Screenshot
 
-![Team Profile Generator Image](/assets/prework-study-guide-img.jpg)
-
-## Deployment
-
-You can access the website with this link.(https://dkt15.github.io/Prework-Study-Guide/)
+![Team Profile Generator Image](/team-profile-img.jpg)
 
 ## Contributing
 
