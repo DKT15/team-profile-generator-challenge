@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an application will take in information about employees on a software engineering team, then generate an HTML webpage that displays summaries for each person.
+This application will take in information about employees on a software engineering team, and then generate an HTML webpage that displays summaries for each person.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ This is an application will take in information about employees on a software en
 - HTML
 - CSS
 - Javascript
-- Boostrap
+- Bootstrap
 - Node.js
 
 ## Usage
@@ -33,7 +33,7 @@ The application will start by running `node index.js` in the command line.
 
 Answer the prompts in the command line to generate the README.
 
-After answering all the prompts, a HTML file and will be named 'team.html' and will be ready for you at the root of the repo.
+After answering all the prompts, an HTML file will be named 'team.html' and will be ready for you at the root of the repo.
 
 ## Screenshot
 
